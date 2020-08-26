@@ -26,13 +26,15 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| nickname     | string | null: false |
-| email        | string | null: false |
-| name         | string | null: false |
-| name_reading | string | null: false |
-| birthday     | string | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| first_name         | string | null: false |
+| last_name          | string | null: false |
+| first_name_reading | string | null: false |
+| last_name_reading  | string | null: false |
+| birthday           | date   | null: false |
 
 ### Association
 
@@ -49,9 +51,9 @@ Things you may want to cover:
 | image       | binary     | null: false                    |
 | item_name   | string     | null: false                    |
 | text        | string     | null: false                    |
-| item_status | string     | null: false                    |
-| location    | string     | null: false                    |
-| shipping    | string     | null: false                    |
+| item_status | integer    | null: false                    |
+| location    | integer    | null: false                    |
+| shipping    | integer    | null: false                    |
 | price       | integer    | null: false                    |
 
 ### Association
@@ -79,9 +81,9 @@ Things you may want to cover:
 
 | Column       | Type       | Options                        |
 | -------------| ---------- | ------------------------------ |
-| content_text | string     |                                |
+| content      | string     |                                |
 | user         | references | null: false, foreign_key: true |
-| room         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -94,8 +96,23 @@ Things you may want to cover:
 | -------------| ---------- | ------------------------------ |
 | category     | string     |                                |
 | user         | references | null: false, foreign_key: true |
-| room         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :item
+
+## orders テーブル
+
+| Column       | Type       | Options                        |
+| -------------| ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
+| number       | integer    | null: false                    |
+| exp_month    | integer    | null: false                    |
+| exp_year     | integer    | null: false                    |
+| cvc          | integer    | null: false                    |
+
+### Association
+
+- belongs_to :user
