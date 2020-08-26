@@ -61,6 +61,7 @@ Things you may want to cover:
 
 - has_many :comments
 - has_one :order
+- has_one :user
 
 ## addresses テーブル
 
