@@ -51,7 +51,9 @@ Things you may want to cover:
 | image       | binary     | null: false                    |
 | item_name   | string     | null: false                    |
 | text        | string     | null: false                    |
+| category    | integer    | null: false                    |
 | item_status | integer    | null: false                    |
+| charge      | integer    | null: false                    |
 | location    | integer    | null: false                    |
 | shipping    | integer    | null: false                    |
 | price       | integer    | null: false                    |
@@ -59,23 +61,22 @@ Things you may want to cover:
 ### Association
 
 - has_many :comment
-- has_many :category
 - has_one :order
 
 ## addresses テーブル
 
 | Column       | Type       | Options                        |
 | -------------| ---------- | ------------------------------ |
-| user         | references | null: false, foreign_key: true |
-| postal_code  | integer    | null: false                    |
-| prefecture   | string     | null: false                    |
+| order        | references | null: false, foreign_key: true |
+| postal_code  | string     | null: false                    |
+| prefecture   | integer    | null: false                    |
 | city         | string     | null: false                    |
-| house_number | integer    | null: false                    |
-| building_name| string     | null: false                    |
+| house_number | string     | null: false                    |
+| building_name| string     |                                |
 
 ### Association
 
-- belongs_to :user
+- belongs_to :order
 
 ## comments テーブル
 
@@ -90,17 +91,6 @@ Things you may want to cover:
 - belongs_to :item
 - belongs_to :user
 
-## categories テーブル
-
-| Column       | Type       | Options                        |
-| -------------| ---------- | ------------------------------ |
-| category     | string     |                                |
-| user         | references | null: false, foreign_key: true |
-| item         | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :item
 
 ## orders テーブル
 
@@ -108,11 +98,8 @@ Things you may want to cover:
 | -------------| ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | item         | references | null: false, foreign_key: true |
-| number       | integer    | null: false                    |
-| exp_month    | integer    | null: false                    |
-| exp_year     | integer    | null: false                    |
-| cvc          | integer    | null: false                    |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :item
