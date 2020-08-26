@@ -38,9 +38,9 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :item
-- has_many :order
-- has_many :comment
+- has_many :items
+- has_many :orders
+- has_many :comments
 
 ## items テーブル
 
@@ -59,7 +59,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :comment
+- has_many :comments
 - has_one :order
 
 ## addresses テーブル
@@ -72,7 +72,7 @@ Things you may want to cover:
 | city         | string     | null: false                    |
 | house_number | string     | null: false                    |
 | building_name| string     |                                |
-| phone        | integer    | null: false                    |
+| phone        | string     | null: false                    |
 
 ### Association
 
