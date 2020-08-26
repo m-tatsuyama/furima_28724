@@ -41,7 +41,6 @@ Things you may want to cover:
 - has_many :item
 - has_many :order
 - has_many :comment
-- has_one :address
 
 ## items テーブル
 
@@ -49,7 +48,7 @@ Things you may want to cover:
 | ------------| ---------- | ------------------------------ |
 | user        | references | null: false, foreign_key: true |
 | image       | binary     | null: false                    |
-| item_name   | string     | null: false                    |
+| name        | string     | null: false                    |
 | text        | string     | null: false                    |
 | category    | integer    | null: false                    |
 | item_status | integer    | null: false                    |
@@ -73,6 +72,7 @@ Things you may want to cover:
 | city         | string     | null: false                    |
 | house_number | string     | null: false                    |
 | building_name| string     |                                |
+| phone        | integer    | null: false                    |
 
 ### Association
 
@@ -103,3 +103,5 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
+- has_one :address
+
