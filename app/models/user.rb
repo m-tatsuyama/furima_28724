@@ -11,9 +11,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :birthday
     validates :nickname
-    validates :email,    uniqueness: { case_sensitive: false },
-                         format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-    validates :password, length: { minimum: 6 }
+    validates :email,    uniqueness: { case_sensitive: false }
   end
   with_options format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'is invalid. Input full-width characters.' } do
     validates :first_name
