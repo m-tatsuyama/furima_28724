@@ -13,6 +13,9 @@ class User < ApplicationRecord
     validates :nickname
     validates :email,    uniqueness: { case_sensitive: false }
   end
+  with_options format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is invalid. Input half-width alphanumeric characters.' } do
+    validates :password
+  end
   with_options format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'is invalid. Input full-width characters.' } do
     validates :first_name
     validates :last_name
