@@ -11,7 +11,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :birthday
     validates :nickname
-    validates :email,    uniqueness: { case_sensitive: false }
+    validates :email, uniqueness: { case_sensitive: false }
   end
   with_options format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'is invalid. Input half-width alphanumeric characters.' } do
     validates :password
