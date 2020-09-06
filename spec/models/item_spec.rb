@@ -32,7 +32,7 @@ RSpec.describe Item, type: :model do
     it 'categoryが1では登録できない' do
       @item.category_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category must be greater than 1")
+      expect(@item.errors.full_messages).to include('Category must be greater than 1')
     end
     it 'item_statusが空では登録できない' do
       @item.item_status_id = nil
@@ -42,7 +42,7 @@ RSpec.describe Item, type: :model do
     it 'item_statusが1では登録できない' do
       @item.item_status_id = '1'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Item status must be greater than 1")
+      expect(@item.errors.full_messages).to include('Item status must be greater than 1')
     end
     it 'chargeが空では登録できない' do
       @item.charge_id = nil
@@ -52,7 +52,7 @@ RSpec.describe Item, type: :model do
     it 'chargeが1では登録できない' do
       @item.charge_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Charge must be greater than 1")
+      expect(@item.errors.full_messages).to include('Charge must be greater than 1')
     end
     it 'locationが空では登録できない' do
       @item.location_id = nil
@@ -62,7 +62,7 @@ RSpec.describe Item, type: :model do
     it 'locationが1では登録できない' do
       @item.location_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Location must be greater than 1")
+      expect(@item.errors.full_messages).to include('Location must be greater than 1')
     end
     it 'shippingが空では登録できない' do
       @item.shipping_id = nil
@@ -72,7 +72,7 @@ RSpec.describe Item, type: :model do
     it 'shippingが1では登録できない' do
       @item.shipping_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Shipping must be greater than 1")
+      expect(@item.errors.full_messages).to include('Shipping must be greater than 1')
     end
     it 'priceが空では登録できない' do
       @item.price = ''
