@@ -6,9 +6,6 @@ class ItemsController < ApplicationController
     @items = Item.order('created_at DESC')
   end
 
-  def show
-  end
-
   def new
     @item = Item.new
   end
@@ -19,6 +16,15 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def update
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
