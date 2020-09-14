@@ -9,4 +9,4 @@ function price () {
     log.textContent = e.target.value*0.1;
     log2.textContent = (e.target.value)-(e.target.value*0.1);
   }
-} window.addEventListener("turbolinks:load", price);
+} window.addEventListener("load", price);
