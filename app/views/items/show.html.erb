@@ -13,7 +13,6 @@
       <div class='sold-out'>
         <span>Sold Out!!</span>
       </div>
-      
       <% end %>
       <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
     </div>
@@ -27,13 +26,16 @@
     </div>
 
     <%# ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう%>
-    <% if user_signed_in? && @item.user == current_user %>
+    <% if user_signed_in? && @item.user == current_user && @item.order == nil%>
     <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
     <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
     <% else %>
+    <% if @item.order == nil%>
       <%= link_to '購入画面に進む', item_orders_path(@item.id), class:"item-red-btn"%>
     <% end %>
+    <% end %>
+
     <%# // ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう %>
 
     <div class="item-explain-box">
