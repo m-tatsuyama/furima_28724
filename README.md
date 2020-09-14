@@ -36,7 +36,7 @@ Things you may want to cover:
 | last_name_reading  | string | null: false |
 | birthday           | date   | null: false |
 
-### Association 
+### Association
 
 - has_many :items
 - has_many :orders
