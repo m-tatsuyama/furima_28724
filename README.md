@@ -1,28 +1,46 @@
-# README
+# README アプリケーション情報
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要
+フリーマーケットのアプリケーションを作成しました。ユーザーを登録すると商品を出品できるようになります。自身が出品した商品は、編集と削除をすることができます。他のユーザーが出品した商品は、クレジットカードを用いて購入することができます。
 
-Things you may want to cover:
+- 接続先情報
+https://furima-28724.herokuapp.com/
 
-* Ruby version
+- User認証
+ID/Pass
+ID: admin
+Pass: 2222
 
-* System dependencies
+- テスト用アカウント等
+- 購入者用
+メールアドレス: bbb@bbb
+パスワード: 111qqq
+- 購入用カード情報
+番号：4242424242424242
+期限：7 / 23
+セキュリティコード：123
+- 出品者用
+メールアドレス名: ppp@ppp
+パスワード: 111qqq
 
-* Configuration
+## 開発状況
+- 開発環境
+Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / Trello
+- 開発期間と平均作業時間
+開発期間：約4週間
+1日あたりの平均作業時間：約9時間
+合計：252時間程度
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+## 動作確認方法
+- WebブラウザGoogle Chromeの最新版を利用してアクセスしてください。
+ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続してください。
+ - 接続先およびログイン情報については、上記の通りです。
+同時に複数の方がログインしている場合に、ログインできない可能性があります。
+- 出品方法
+テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品
+- 購入方法
+テストアカウントでログイン→トップページから商品検索→商品選択→商品購入
+確認後、ログアウト処理をお願いします。
 
 ## users テーブル
 
